@@ -1,28 +1,33 @@
 language: node_js
+
 cache:
   yarn: true
   directories:
-  - node_modules
-  - "~/.npm"
+    - node_modules
+    - ~/.npm
+
 node_js:
-- '14'
+  - '14'
+
 git:
   depth: 3
+
 script:
-- yarn test
+  - yarn test
+
 notifications:
   email:
     recipients:
-    - aduartem@miumg.edu.gt
-    - alan@warava.com
+      - aduartem@miumg.edu.gt
+      - alan@warava.com
   on_success: always
   on_failure: always
+
 deploy:
   provider: heroku
   skip_cleanup: true
   keep_history: true
-  api_key:
-    secure: iD880Emc5NItzFzDvbIdaUECcAj6GxbNB49iD3Pph5/egahmKCHbil3hsr4evuVxkFiaOAQHaRgaYlP4bvkScKhfkrOwsxyGiwH2gbTqgNNgcL23DSJG3kY1YhL4NXDIPos1+LCYU9siF+juNVHh5egh6nNmjOYGaSJj8ziLZRLN9mfD4qr50lT2qVS9LgSEr1by8o9SocRgWn+1UMX9iSMYUyhJKwDhA2tDMFxRniXx1ZS7CeFt6jLqtRf1CrW7ygr+iRIjUCuoly6qUSFEGUBI3t2VL/Yu20aVmP3B0mOhCaCWzTyxfNchAqlAcXOjwIzKD1RmjmY1761pgVpsnkF+Jdq0LDNz0Vk0cih0IolZFq5t7i4zOHDXCOIth2kJk4vXsTNIp+odV4srCVhc2JUran60LqzkjDaNeDCWZxIdgMyUO6w6HFMDqClIt4dYlCrkmQkGsbOAAlENlckJfTIGhSzuEWzTkpkJezFupwC2h9rBqS1zTuHqzADYygRgxxPzabFuWc6yqfgEXCT/SKah8egyO1oDvIiC8SetQSLwjgojAWf5pst3bs0b2/NaGQ7o5yqtqMG5FfmOKGP+D7fZ9QZs2ig0XgYOSeRmtpZ8tdgk3Xe0Qj96uCQJ0votHQ1hZ0bzRk1321WgzozijFN+vaz5fBMDm3TMKTsikgU=
+  api_key: $HEROKU_KEY
   app: travis-be-express
   on:
     repo: aduam/travis-BE-express
