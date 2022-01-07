@@ -30,4 +30,4 @@ deploy:
   api_key: 10bf68ee-d559-4c0e-a33a-8e611fed74d7
   app: travis-be-express
   on:
-    repo: aduam/travis-BE-express
+    branch: master
