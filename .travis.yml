@@ -1,0 +1,33 @@
+language: node_js
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
+    - ~/.npm
+
+node_js:
+  - '14'
+
+git:
+  depth: 3
+
+script:
+  - yarn test
+
+notifications:
+  email:
+    recipients:
+      - aduartem@miumg.edu.gt
+      - alan@warava.com
+  on_success: always
+  on_failure: always
+
+deploy:
+  provider: heroku
+  skip_cleanup: true
+  keep_history: true
+  api_key: 10bf68ee-d559-4c0e-a33a-8e611fed74d7
+  app: travis-be-express
+  on:
+    repo: aduam/travis-BE-express
