@@ -27,7 +27,7 @@ deploy:
   provider: heroku
   skip_cleanup: true
   keep_history: true
-  api_key: 10bf68ee-d559-4c0e-a33a-8e611fed74d7
+  api_key: $HEROKU_KEY
   app: travis-be-express
   on:
     branch: master
